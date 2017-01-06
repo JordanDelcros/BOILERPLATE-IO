@@ -1,13 +1,23 @@
-# BOILERPLATE IO
+# Front boilerplate
 
-## What is boilerplate io?
-This project try to make easy the boring step in development process... the initialization.
-Each branch of this repository is a setup (branches are listed below)
+## Presentation
+This boilerplate is a simple website/application that is compiled to the `build` folder.
+It let you do `html`, `sass`, `Javascript` (`ES6`).
+A local server is provided by `browser-sync` and available when app is running over `http://localhost:3000`.
 
-## How to use
-The only step you have is to clone the git repository, switch to the branch you need and run `npm install` then `npm start`.
+## Documentation
 
-## Branches list
+### Install
+```javascript
+	npm install
+```
 
-| branches   | capability                                                | parent   | more infos                                                                                 |
-| ---------- | --------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------ |
+### Run
+```javascript
+	npm start
+```
+
+### Build
+```javascript
+	npm run build
+```
