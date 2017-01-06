@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "BOILERPLATE IO, a boilerplate for everything you need.",
   "scripts": {
-  	"start": "gulp default",
-  	"build": "gulp build"
+    "start": "gulp default",
+    "build": "gulp build"
   },
   "keywords": [
     "boilerplate",
@@ -20,13 +20,16 @@
     "gulp": "*",
     "gulp-autoprefixer": "*",
     "gulp-babel": "*",
+    "gulp-clean-css": "*",
     "gulp-concat": "*",
     "gulp-if": "*",
-    "gulp-clean-css": "*",
     "gulp-notify": "*",
     "gulp-sass": "*",
     "gulp-uglify": "*",
-    "webpack-stream": "*",
-    "require-dir": "*"
+    "html-loader": "*",
+    "require-dir": "*",
+    "vue": "*",
+    "vue-router": "*",
+    "webpack-stream": "*"
   }
 }

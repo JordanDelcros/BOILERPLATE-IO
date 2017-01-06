@@ -13,6 +13,11 @@ gulp.task("scripts", function(){
 	gulp
 		.src(scriptsTask.src)
 		.pipe(webpack_stream({
+			resolve: {
+				alias: {
+					vue: "vue/dist/vue.js"
+				}
+			},
 			module: {
 				loaders: [
 					{

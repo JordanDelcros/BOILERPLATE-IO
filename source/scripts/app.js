@@ -1,26 +1,42 @@
-class App {
-	constructor(){
+import Vue from "vue";
+import Router from "vue-router";
+import EventHandler from "./tools/event-handler.js";
 
-		return this.initialize();
+Vue.use(Router);
 
+import HomeView from "./views/home-view.js";
+
+var router = new Router({
+	mode: "history",
+	base: "/",
+	routes: [
+		{
+			path: "/",
+			component: HomeView
+		}
+	]
+});
+
+var view = new Vue({
+	router: router,
+	created(){
+
+		console.info("Try to resize me to test the event bus.");
+
+		window.addEventListener("resize", this.resize, false);
+
+	},
+	methods: {
+		resize(){
+
+			EventHandler.$emit("resize");
+
+		}
 	}
-	initialize(){
-
-		var message = "Hello boilerplate world!";
-
-		var paragraph = document.querySelector("p");
-
-		paragraph.textContent = message;
-
-		console.log(message);
-
-		return this;
-
-	}
-};
+})
 
 document.addEventListener("DOMContentLoaded", function(){
 
-	new App();
+	view.$mount("#App");
 
 }, false);
