@@ -11,3 +11,4 @@ The only step you have is to clone the git repository, switch to the branch you 
 
 | branches   | capability                                                | parent   | more infos                                                                                 |
 | ---------- | --------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------ |
+| front      | html, sass, javascript es6, images, front server          | none     | [documentation](https://github.com/JordanDelcros/boilerplate-io/tree/front#documentation) |
