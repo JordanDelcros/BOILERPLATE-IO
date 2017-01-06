@@ -2,10 +2,31 @@
   "name": "boilerplate-io",
   "version": "0.0.1",
   "description": "BOILERPLATE IO, a boilerplate for everything you need.",
+  "scripts": {
+  	"start": "gulp default",
+  	"build": "gulp build"
+  },
   "keywords": [
     "boilerplate",
     "ready-to-run"
   ],
   "author": "Jordan Delcros",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "babel-loader": "*",
+    "babel-preset-es2015": "*",
+    "browser-sync": "*",
+    "connect-modrewrite": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-babel": "*",
+    "gulp-concat": "*",
+    "gulp-if": "*",
+    "gulp-clean-css": "*",
+    "gulp-notify": "*",
+    "gulp-sass": "*",
+    "gulp-uglify": "*",
+    "webpack-stream": "*",
+    "require-dir": "*"
+  }
 }
