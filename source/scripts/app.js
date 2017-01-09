@@ -42,7 +42,7 @@ class App {
 		this.light = new THREE.PointLight(0xFFFFFF, 1, 100);
 		this.light.position.set(0, 10, 10);
 		this.light.castShadow = true;
-		this.light.shadowMapWidth = this.light.shadowMapHeight = 2048;
+		this.light.shadow.mapSize.width = this.light.shadow.mapSize.height = 2048;
 		this.scene.add(this.light);
 
 		window.addEventListener("resize", this.resize.bind(this), false);
