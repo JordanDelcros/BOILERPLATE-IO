@@ -3,12 +3,15 @@
   "version": "0.0.1",
   "description": "BOILERPLATE IO, a boilerplate for everything you need.",
   "scripts": {
-  	"start": "node server"
+    "start": "node server"
   },
   "keywords": [
     "boilerplate",
     "ready-to-run"
   ],
   "author": "Jordan Delcros",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "mysql": "^2.12.0"
+  }
 }
