@@ -9,10 +9,11 @@ The only step you have is to clone the git repository, switch to the branch you 
 
 ## Branches list
 
-| branches  | capability                                                               | parent | more infos                                                                                    |
-| --------- | ------------------------------------------------------------------------ | ------ | --------------------------------------------------------------------------------------------- |
-| front     | html, sass, javascript es6, images, front server                         | none   | [documentation](https://github.com/JordanDelcros/boilerplate-io/tree/front#documentation)     |
-| vue       | html, sass, javascript es6, vue, vue-router, images, front server        | front  | [documentation](https://github.com/JordanDelcros/boilerplate-io/tree/vue#documentation)       |
-| three     | html, sass, javascript es6, three, images, front server                  | front  | [documentation](https://github.com/JordanDelcros/boilerplate-io/tree/three#documentation)     |
-| vue-three | html, sass, javascript es6, vue, vue-router, three, images, front server | vue    | [documentation](https://github.com/JordanDelcros/boilerplate-io/tree/vue-three#documentation) |
-| node      | node server                                                              | none   | [documentation](https://github.com/JordanDelcros/boilerplate-io/tree/node#documentation)      |
+| branches   | capability                                                               | parent | more infos                                                                                     |
+| ---------- | ------------------------------------------------------------------------ | ------ | ---------------------------------------------------------------------------------------------- |
+| front      | html, sass, javascript es6, images, front server                         | none   | [documentation](https://github.com/JordanDelcros/boilerplate-io/tree/front#documentation)      |
+| vue        | html, sass, javascript es6, vue, vue-router, images, front server        | front  | [documentation](https://github.com/JordanDelcros/boilerplate-io/tree/vue#documentation)        |
+| three      | html, sass, javascript es6, three, images, front server                  | front  | [documentation](https://github.com/JordanDelcros/boilerplate-io/tree/three#documentation)      |
+| vue-three  | html, sass, javascript es6, vue, vue-router, three, images, front server | vue    | [documentation](https://github.com/JordanDelcros/boilerplate-io/tree/vue-three#documentation)  |
+| node       | node server                                                              | none   | [documentation](https://github.com/JordanDelcros/boilerplate-io/tree/node#documentation)       |
+| node-mysql | node server, mysql                                                       | node   | [documentation](https://github.com/JordanDelcros/boilerplate-io/tree/node-mysql#documentation) |
