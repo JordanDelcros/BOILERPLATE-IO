@@ -20,7 +20,12 @@ database.connect(function( error ){
 
 });
 
-database.query("CREATE TABLE IF NOT EXISTS `requests` (`id` BIGINT(20) NOT NULL AUTO_INCREMENT, `path` VARCHAR(255) NOT NULL, PRIMARY KEY (`id`)) ENGINE = InnoDB AUTO_INCREMENT = 1 DEFAULT CHARSET = utf8", ( error, rows, field )=>{
+database.query(`CREATE TABLE IF NOT EXISTS requests (
+	id BIGINT(20) NOT NULL AUTO_INCREMENT,
+	path VARCHAR(255) NOT NULL,
+	date DATETIME NOT NULL DEFAULT NOW(),
+	PRIMARY KEY (id)
+) ENGINE = InnoDB AUTO_INCREMENT = 1 DEFAULT CHARSET = utf8`, ( error, rows, field )=>{
 
 	if( error ){
 
@@ -40,7 +45,7 @@ var server = http.createServer(( request, results )=>{
 
 	var url = request.url;
 
-	database.query("INSERT INTO `requests` (`path`) VALUES (?)", url, function( error ){
+	database.query("INSERT INTO requests (path) VALUES (?)", url, function( error ){
 
 		results.writeHead(200, {
 			"Content-Type": "text/html"
