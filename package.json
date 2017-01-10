@@ -2,6 +2,9 @@
   "name": "boilerplate-io",
   "version": "0.0.1",
   "description": "BOILERPLATE IO, a boilerplate for everything you need.",
+  "scripts": {
+  	"start": "node server"
+  },
   "keywords": [
     "boilerplate",
     "ready-to-run"

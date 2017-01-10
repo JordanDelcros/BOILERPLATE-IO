@@ -1,17 +1,15 @@
-# BOILERPLATE IO
+# Node boilerplate
 
-## What is boilerplate io?
-This project try to make easy the boring step in development process... the initialization.
-Each branch of this repository is a setup (branches are listed below)
+## Presentation
+This boilerplate is a simple `Node` server, it ability depend on your Node version.
+A local server is provided and available when server is running over `http://localhost:3000`.
 
-## How to use
-The only step you have is to clone the git repository, switch to the branch you need and run `npm install` then `npm start`.
+## Documentation
 
-## Branches list
+### Install
+You just need an install of `Node` and `npm`.
 
-| branches  | capability                                                               | parent | more infos                                                                                    |
-| --------- | ------------------------------------------------------------------------ | ------ | --------------------------------------------------------------------------------------------- |
-| front     | html, sass, javascript es6, images, front server                         | none   | [documentation](https://github.com/JordanDelcros/boilerplate-io/tree/front#documentation)     |
-| vue       | html, sass, javascript es6, vue, vue-router, images, front server        | front  | [documentation](https://github.com/JordanDelcros/boilerplate-io/tree/vue#documentation)       |
-| three     | html, sass, javascript es6, three, images, front server                  | front  | [documentation](https://github.com/JordanDelcros/boilerplate-io/tree/three#documentation)     |
-| vue-three | html, sass, javascript es6, vue, vue-router, three, images, front server | vue    | [documentation](https://github.com/JordanDelcros/boilerplate-io/tree/vue-three#documentation) |
+### Run
+```javascript
+	npm start
+```
