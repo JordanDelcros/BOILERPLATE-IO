@@ -12,6 +12,11 @@
   "author": "Jordan Delcros",
   "license": "MIT",
   "dependencies": {
-    "mysql": "*"
+    "mysql": "*",
+    "pg": "*",
+    "pg-hstore": "*",
+    "sequelize": "*",
+    "sqlite3": "*",
+    "tedious": "*"
   }
 }

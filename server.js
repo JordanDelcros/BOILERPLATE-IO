@@ -1,65 +1,54 @@
 var http = require("http");
-var mysql = require("mysql");
+var Sequelize = require("sequelize");
 
-var database = mysql.createConnection({
+var database = new Sequelize("boilerplate-io", "root", "azerty", {
 	host: "localhost",
-	user: "root",
-	password: "azerty",
-	database: "boilerplate-io"
+	dialect: "mysql"
 });
 
-database.connect(function( error ){
+database
+	.authenticate()
+	.then(function(){
 
-	if( error ){
+		console.log("Connected to the database");
+
+	})
+	.catch(function( error ){
 
 		throw error;
 
-	};
+	});
 
-	console.log("Database connected.");
-
-});
-
-database.query("CREATE TABLE IF NOT EXISTS `requests` (`id` BIGINT(20) NOT NULL AUTO_INCREMENT, `path` VARCHAR(255) NOT NULL, PRIMARY KEY (`id`)) ENGINE = InnoDB AUTO_INCREMENT = 1 DEFAULT CHARSET = utf8", ( error, rows, field )=>{
-
-	if( error ){
-
-		throw error;
-
-	};
-
-	if( !rows.warningCount ){
-
-		console.log("Created 'requests' table.");
-
-	};
-
+var RequestTable = database.define("request", {
+	path: Sequelize.STRING,
+	date: Sequelize.DATE
+}, {
+	timestamps: false
 });
 
 var server = http.createServer(( request, results )=>{
 
 	var url = request.url;
 
-	database.query("INSERT INTO `requests` (`path`) VALUES (?)", url, function( error ){
+	database
+		.sync()
+		.then(function(){
 
-		results.writeHead(200, {
-			"Content-Type": "text/html"
-		});
+			results.end("<p>Database table updated!</p>");
 
-		if( error ){
+			return RequestTable.create({
+				path: url,
+				date: new Date()
+			});
+
+		})
+		.catch(function( error ){
 
 			console.error(error);
 
 			results.end("<p>Cannot interact with the database or the 'request' table.</p>");
 
-		}
-		else {
-
-			results.end("<p>Database table updated!</p>");
-
-		};
-
-	});
+		});
 
 });
 
