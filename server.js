@@ -21,7 +21,11 @@ database
 
 var RequestTable = database.define("request", {
 	path: Sequelize.STRING,
-	date: Sequelize.DATE
+	date: {
+		type: Sequelize.DATE,
+		defaultValue: Sequelize.NOW,
+		allowNull: false
+	}
 }, {
 	timestamps: false
 });
@@ -34,19 +38,26 @@ var server = http.createServer(( request, results )=>{
 		.sync()
 		.then(function(){
 
-			results.end("<p>Database table updated!</p>");
-
 			return RequestTable.create({
-				path: url,
-				date: new Date()
+				path: url
+			})
+			.then(function( createdRequest ){
+
+				results.end("<p>Database table updated!</p>");
+
+			})
+			.catch(function( error ){
+
+				results.end("<p>Cannot interact with the database or the 'request' table.</p>");
+
+				return error;
+
 			});
 
 		})
 		.catch(function( error ){
 
-			console.error(error);
-
-			results.end("<p>Cannot interact with the database or the 'request' table.</p>");
+			throw error;
 
 		});
 
