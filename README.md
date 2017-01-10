@@ -2,7 +2,7 @@
 
 ## Presentation
 This boileplate is a simple `Node` server including the `Sequelize` library to handle easily database interactions.
-A local server is provided and available when server is running over `[http://localhost:3000](http://localhost:3000)`.
+A local server is provided and available when server is running over `http://localhost:3000`.
 
 ## Documentation
 
