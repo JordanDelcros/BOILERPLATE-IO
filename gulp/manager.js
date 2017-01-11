@@ -24,7 +24,7 @@ module.exports = new TaskManager([
 	}),
 	new Task("shaders", {
 		src: src + "shaders/*.glsl",
-		dst: dst + "/assets/shaders",
+		dst: dst + "assets/shaders/",
 		wth: src + "shaders/*.glsl",
 		rld: ["scripts"]
 	}),
