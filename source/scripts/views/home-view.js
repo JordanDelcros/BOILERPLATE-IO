@@ -20,8 +20,25 @@ export default {
 		this.cube = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1, 1), new THREE.MeshPhongMaterial({
 			map: texture
 		}));
+		this.cube.position.set(-1, 0, 0);
 		this.cube.castShadow = true;
 		this.$root.scene.add(this.cube);
+
+		var textureCube = new THREE.CubeTextureLoader().setPath("/assets/images/").load(["pos-x.png", "neg-x.png", "pos-y.png", "neg-y.png", "pos-z.png" ,"neg-z.png"]);
+
+		this.cubeReflection = new THREE.Mesh(new THREE.SphereGeometry(1, 15, 15), new THREE.ShaderMaterial({
+			uniforms: {
+				texture: {
+					type: "t",
+					value: textureCube
+				}
+			},
+			vertexShader: require("../../shaders/environement.vert.glsl"),
+			fragmentShader: require("../../shaders/environement.frag.glsl")
+		}));
+		this.cubeReflection.position.set(1, 0, 0);
+		this.cubeReflection.castShadow = true;
+		this.$root.scene.add(this.cubeReflection);
 
 		this.plane = new THREE.Mesh(new THREE.PlaneGeometry(10, 10, 1, 1), new THREE.MeshPhongMaterial());
 		this.plane.rotation.x = -(90 * DEGREE);
@@ -50,6 +67,10 @@ export default {
 			this.cube.rotation.x += (DEGREE * 1);
 			this.cube.rotation.y += (DEGREE * 1);
 			this.cube.rotation.z += (DEGREE * 1);
+
+			this.cubeReflection.rotation.x += (DEGREE * 1);
+			this.cubeReflection.rotation.y += (DEGREE * 1);
+			this.cubeReflection.rotation.z += (DEGREE * 1);
 
 		}
 	}

@@ -28,6 +28,7 @@
     "gulp-uglify": "*",
     "html-loader": "*",
     "require-dir": "*",
+    "shader-loader": "*",
     "three": "*",
     "vue": "*",
     "vue-router": "*",
