@@ -22,6 +22,12 @@ module.exports = new TaskManager([
 		out: "app.js",
 		wth: src + "scripts/**/*.js"
 	}),
+	new Task("shaders", {
+		src: src + "shaders/*.glsl",
+		dst: dst + "/assets/shaders",
+		wth: src + "shaders/*.glsl",
+		rld: ["scripts"]
+	}),
 	new Task("images", {
 		src: src + "images/**/*.+(jpg|gif|png|svg)",
 		dst: dst + "assets/images"

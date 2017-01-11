@@ -27,7 +27,8 @@
     "gulp-sass": "*",
     "gulp-uglify": "*",
     "require-dir": "*",
-    "three": "^0.83.0",
+    "shader-loader": "*",
+    "three": "*",
     "webpack-stream": "*"
   }
 }

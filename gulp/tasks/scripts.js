@@ -24,6 +24,10 @@ gulp.task("scripts", function(){
 						}
 					},
 					{
+						test: /\.glsl$/,
+						loader: "shader"
+					},
+					{
 						test: /\.html$/,
 						loader: "html"
 					},
