@@ -7,6 +7,7 @@ var gulp_uglify = require("gulp-uglify");
 
 var manager = require("../manager.js");
 var scriptsTask = manager.getTask("scripts");
+var errorHandler = require("../components/error-handler.js");
 
 gulp.task("scripts", function(){
 
@@ -24,10 +25,6 @@ gulp.task("scripts", function(){
 						}
 					},
 					{
-						test: /\.glsl$/,
-						loader: "shader"
-					},
-					{
 						test: /\.html$/,
 						loader: "html"
 					},
@@ -38,6 +35,7 @@ gulp.task("scripts", function(){
 				]
 			}
 		}))
+		.on("error", errorHandler)
 		.pipe(gulp_concat(scriptsTask.out))
 		.pipe(gulp_if(manager.getOption("minify"), gulp_uglify()))
 		.pipe(gulp.dest(scriptsTask.dst));
